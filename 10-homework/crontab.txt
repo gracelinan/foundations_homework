@@ -1,0 +1,10 @@
+0 8 * * * python3 ~/Homework10.py
+
+
+
+
+server root@foundations:~$ dpkg-reconfigure tzdata
+
+Current default time zone: 'US/Eastern'
+Local time is now:      Tue Jun 25 14:34:56 EDT 2019.
+Universal Time is now:  Tue Jun 25 18:34:56 UTC 2019.
