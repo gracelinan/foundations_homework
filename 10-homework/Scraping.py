@@ -78,9 +78,19 @@ df.to_csv(filename, index=False)
 # In[10]:
 
 
+from dotenv import load_dotenv
+load_dotenv()
+import os
+
+API_KEY = os.getenv("Mailgun_API-KEY")
+
+
+# In[11]:
+
+
 response = requests.post(
         "https://api.mailgun.net/v3/sandbox3bb56ce803ac4abaa01be7deebbf8b9b.mailgun.org/messages",
-        auth=("api", "4a2f6fafc0380e2c2ac0ec89adbd3d9d-39bc661a-3a837b66"),
+        auth=("api", "API_KEY"),
         files=[("attachment", open(filename))],
         data={"from": "Excited User <mailgun@sandbox3bb56ce803ac4abaa01be7deebbf8b9b.mailgun.org>",
               "to": ["grace.129@hotmail.com", "nl2687@columbia.edu"],

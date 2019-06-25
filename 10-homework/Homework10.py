@@ -15,6 +15,7 @@ load_dotenv()
 import os
 
 API_KEY = os.getenv("DARKSKY_API_KEY")
+API_KEY2 = os.getenv("Mailgun_API-KEY")
 
 
 # In[3]:
@@ -77,10 +78,9 @@ date_string
 
 response = requests.post(
         "https://api.mailgun.net/v3/sandbox3bb56ce803ac4abaa01be7deebbf8b9b.mailgun.org/messages",
-        auth=("api", "4a2f6fafc0380e2c2ac0ec89adbd3d9d-39bc661a-3a837b66"),
+        auth=("api", "API_KEY2"),
         data={"from": "Excited User <mailgun@sandbox3bb56ce803ac4abaa01be7deebbf8b9b.mailgun.org>",
               "to": ["grace.129@hotmail.com", "nl2687@columbia.edu"],
               "subject": f"8AM Weather forecast: {date_string}.",
               "text": f"Right now it is {temperature} degrees out and {summary}. Today will be {temp_feeling} with a high of {high_temp} and a low of {low_temp}. {rain_warning}"}) 
-response.text
 
